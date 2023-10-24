@@ -38,8 +38,6 @@ namespace RecipeBox.Controllers
     {
       Category thisCategory = _db.Categories
                                 .Include(cat => cat.Recipes)
-                                .ThenInclude(recipe => recipe.JoinEntities)
-                                .ThenInclude(join => join.Tag)
                                 .FirstOrDefault(category => category.CategoryId == id);
       return View(thisCategory);
     }

@@ -11,7 +11,7 @@
 
     @if (@Model.Recipes.Count == 0)
     {
-      <h3>No recipe have been added to this category yet!</h3>
+      <h3>No recipes have been added to this category yet!</h3>
     }
     else
     {
@@ -19,21 +19,7 @@
       <ul>
         @foreach (Recipe recipe in Model.Recipes)
         {
-          string tags = "";
-          @if (recipe.JoinEntities.Count == 0)
-          {
-            tags = "This recipe does not have any tags.";
-          }
-          else
-          {
-            List<string> recipeList = new List<string>();
-            @foreach (RecipeTag join in recipe.JoinEntities)
-            {
-              recipeList.Add(join.Tag.Title);
-            }
-            tags = String.Join(",", recipeList);
-          }
-          <li>@recipe.RecipeName | Tags: @tags</li>
+          <li>@recipe.RecipeName</li>
         }
       </ul>
     }

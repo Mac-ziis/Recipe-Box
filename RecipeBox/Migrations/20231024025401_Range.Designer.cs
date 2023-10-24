@@ -11,8 +11,8 @@ using RecipeBox.Models;
 namespace RecipeBox.Migrations
 {
     [DbContext(typeof(RecipeBoxContext))]
-    [Migration("20231022225424_Initial")]
-    partial class Initial
+    [Migration("20231024025401_Range")]
+    partial class Range
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
